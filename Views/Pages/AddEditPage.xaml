@@ -80,7 +80,10 @@
             VerticalAlignment="Center"
             Orientation="Horizontal">
             <TextBlock Text="Изображение: " />
-            <TextBox x:Name="tbImage" Text="{Binding Image}" />
+            <TextBox
+                x:Name="tbImage"
+                IsReadOnly="True"
+                Text="{Binding Image}" />
         </StackPanel>
         <StackPanel
             Grid.Row="2"
@@ -94,7 +97,7 @@
                 Source="{Binding PicturePath}" />
             <Button
                 x:Name="btnImage"
-                Click="btnImage_Click"
+                Click="BtnImage_Click"
                 Content="Изображения..." />
         </StackPanel>
         <StackPanel
@@ -133,11 +136,11 @@
             <Button
                 x:Name="btnSave"
                 Background="#00CC76"
-                Click="btnSave_Click"
+                Click="BtnSave_Click"
                 Content="Сохранить" />
             <Button
                 x:Name="btnDelete"
-                Click="btnDelete_Click"
+                Click="BtnDelete_Click"
                 Content="Удалить"
                 Visibility="Collapsed" />
         </StackPanel>

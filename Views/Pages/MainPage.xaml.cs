@@ -138,10 +138,12 @@ namespace Lopushok.Views.Pages
         private void CreatePages()
         {
             spPages.Children.Clear();
-            var tbPrev = new TextBlock();
-            tbPrev.Text = " < ";
-            tbPrev.FontSize = 30;
-            tbPrev.Margin = new Thickness(5);
+            var tbPrev = new TextBlock
+            {
+                Text = " < ",
+                FontSize = 30,
+                Margin = new Thickness(5)
+            };
             tbPrev.MouseLeftButtonDown += TbPrev_MouseLeftButtonDown;
             spPages.Children.Add(tbPrev);
             var pagesIterator = selectedPage;
@@ -153,7 +155,7 @@ namespace Lopushok.Views.Pages
                 }
                 var tbPage = new TextBlock
                 {
-                    Text = (pagesIterator).ToString(),
+                    Text = pagesIterator.ToString(),
                     FontSize = 30,
                     Margin = new Thickness(5),
                 };
@@ -164,12 +166,13 @@ namespace Lopushok.Views.Pages
                 tbPage.MouseLeftButtonDown += TbPage_MouseLeftButtonDown;
                 spPages.Children.Add(tbPage);
                 pagesIterator++;
-                
             }
-            var tbNext = new TextBlock();
-            tbNext.Text = " > ";
-            tbNext.FontSize = 30;
-            tbNext.Margin = new Thickness(5);
+            var tbNext = new TextBlock
+            {
+                Text = " > ",
+                FontSize = 30,
+                Margin = new Thickness(5)
+            };
             tbNext.MouseLeftButtonDown += TbNext_MouseLeftButtonDown;
             spPages.Children.Add(tbNext);
         }
@@ -211,7 +214,6 @@ namespace Lopushok.Views.Pages
                 selectedPage--;
                 dgProducts.ItemsSource = GetProducts(tbSearch.Text, cbSort.Text, cbFilter.Text);
             }
-
         }
 
         /// <summary>
@@ -237,7 +239,7 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             selectedPage = 1;
             dgProducts.ItemsSource = GetProducts(tbSearch.Text, cbSort.Text, cbFilter.Text);
@@ -248,7 +250,7 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedPage = 1;
             dgProducts.ItemsSource = GetProducts(tbSearch.Text, ((ComboBoxItem)cbSort.SelectedValue).Content.ToString(), cbFilter.Text);
@@ -259,7 +261,7 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedPage = 1;
             dgProducts.ItemsSource = GetProducts(tbSearch.Text, cbSort.Text, (cbFilter.SelectedValue).ToString());
@@ -270,10 +272,9 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgProducts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void DgProducts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var selectedProduct = dgProducts.SelectedItem as Product;
-            if (selectedProduct == null)
+            if (!(dgProducts.SelectedItem is Product))
             {
                 return;
             }
@@ -285,7 +286,7 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddEditPage(new Product()));
         }
@@ -295,16 +296,9 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DgProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (dgProducts.SelectedItems.Count > 1)
-            {
-                btnMinEdit.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                btnMinEdit.Visibility = Visibility.Collapsed;
-            }
+            btnMinEdit.Visibility = dgProducts.SelectedItems.Count > 1 ? Visibility.Visible : Visibility.Collapsed;
         }
 
         /// <summary>
@@ -312,7 +306,7 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnMinEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnMinEdit_Click(object sender, RoutedEventArgs e)
         {
             // а как вывести в интерфейс
             var products = new List<Product>();

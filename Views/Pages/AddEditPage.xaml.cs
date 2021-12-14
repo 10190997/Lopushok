@@ -13,7 +13,7 @@ namespace Lopushok.Views.Pages
     /// </summary>
     public partial class AddEditPage : Page
     {
-        private Product product { get; set; }
+        private Product Product { get; set; }
 
         /// <summary>
         /// Конструктор страницы
@@ -24,16 +24,9 @@ namespace Lopushok.Views.Pages
             InitializeComponent();
             if (product != null)
             {
-                this.product = product;
+                Product = product;
             }
-            if (product.ID != 0)
-            {
-                btnDelete.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                btnDelete.Visibility = Visibility.Collapsed;
-            }
+            btnDelete.Visibility = product.ID != 0 ? Visibility.Visible : Visibility.Collapsed;
             DataContext = product;
             cbType.ItemsSource = DB.entities.ProductTypes.ToList();
         }
@@ -43,17 +36,17 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnImage_Click(object sender, RoutedEventArgs e)
+        private void BtnImage_Click(object sender, RoutedEventArgs e)
         {
             var window = new ImagesWindow();
             window.ShowDialog();
 
             if (window.DialogResult == true)
             {
-                product.Image = window.ImgUri;
+                Product.Image = window.ImgUri;
                 // Обновить контекст, чтобы поменялась картинка
                 DataContext = null;
-                DataContext = product;
+                DataContext = Product;
             }
         }
 
@@ -62,7 +55,7 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             var errors = new StringBuilder();
 
@@ -75,7 +68,7 @@ namespace Lopushok.Views.Pages
                 errors.AppendLine("Введите артикул");
             }
 
-            else if (product.ID == 0)
+            else if (Product.ID == 0)
             {
                 var articles = DB.entities.Products.ToList();
                 foreach (var item in articles)
@@ -120,9 +113,9 @@ namespace Lopushok.Views.Pages
                 return;
             }
 
-            if (product.ID == 0)
+            if (Product.ID == 0)
             {
-                DB.entities.Products.Add(product);
+                DB.entities.Products.Add(Product);
             }
             DB.entities.SaveChanges();
             MessageBox.Show("Успешно сохранено");
@@ -134,11 +127,11 @@ namespace Lopushok.Views.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Вы уверены?", "Подтверждение", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                if (product.ProductSales.Count > 0)
+                if (Product.ProductSales.Count > 0)
                 {
                     MessageBox.Show("У продукта есть информация о его продажах агентами. Удаление запрещено.");
                     return;
@@ -146,23 +139,23 @@ namespace Lopushok.Views.Pages
                 // Если у продукта есть информация о материалах, используемых при его производстве,
                 // или история изменения цен, то эта информация должна быть удалена вместе с продуктом.
 
-                if (product.MaterialsList != null)
+                if (Product.MaterialsList != null)
                 {
-                    var pms = product.ProductMaterials.ToList();
+                    var pms = Product.ProductMaterials.ToList();
                     foreach (var item in pms)
                     {
                         DB.entities.ProductMaterials.Remove(item);
                     }
                 }
-                if (product.ProductCostHistories.Count != 0)
+                if (Product.ProductCostHistories.Count != 0)
                 {
-                    var pchs = product.ProductCostHistories.ToList();
+                    var pchs = Product.ProductCostHistories.ToList();
                     foreach (var item in pchs)
                     {
                         DB.entities.ProductCostHistories.Remove(item);
                     }
                 }
-                DB.entities.Products.Remove(product);
+                DB.entities.Products.Remove(Product);
                 DB.entities.SaveChanges();
                 MessageBox.Show("Успешно удалено");
                 NavigationService.GoBack();

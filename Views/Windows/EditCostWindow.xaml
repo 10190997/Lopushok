@@ -30,7 +30,7 @@
         <Button
             x:Name="btnSaveEdit"
             Grid.Row="2"
-            Click="btnSaveEdit_Click"
+            Click="BtnSaveEdit_Click"
             Content="Сохранить" />
     </Grid>
 </Window>

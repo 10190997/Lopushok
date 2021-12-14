@@ -30,12 +30,12 @@
         <TextBox
             x:Name="tbSearch"
             Grid.Row="1"
-            TextChanged="tbSearch_TextChanged" />
+            TextChanged="TbSearch_TextChanged" />
         <ComboBox
             x:Name="cbSort"
             Grid.Row="1"
             Grid.Column="1"
-            SelectionChanged="cbSort_SelectionChanged">
+            SelectionChanged="CbSort_SelectionChanged">
             <ComboBoxItem>Сортировка</ComboBoxItem>
             <ComboBoxItem>По наименованию, от А до Я</ComboBoxItem>
             <ComboBoxItem>По наименованию, от Я до А</ComboBoxItem>
@@ -48,7 +48,7 @@
             x:Name="cbFilter"
             Grid.Row="1"
             Grid.Column="2"
-            SelectionChanged="cbFilter_SelectionChanged"
+            SelectionChanged="CbFilter_SelectionChanged"
             ToolTip="Фильтрация" />
         <DataGrid
             x:Name="dgProducts"
@@ -56,8 +56,8 @@
             Grid.ColumnSpan="3"
             AutoGenerateColumns="False"
             IsReadOnly="True"
-            MouseDoubleClick="dgProducts_MouseDoubleClick"
-            SelectionChanged="dgProducts_SelectionChanged"
+            MouseDoubleClick="DgProducts_MouseDoubleClick"
+            SelectionChanged="DgProducts_SelectionChanged"
             ToolTip="Для изменения или удаления кликните дважды">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Width="*">
@@ -114,12 +114,12 @@
             <Button
                 x:Name="btnAdd"
                 Width="auto"
-                Click="btnAdd_Click"
+                Click="BtnAdd_Click"
                 Content="Добавить продукцию" />
             <Button
                 x:Name="btnMinEdit"
                 Width="auto"
-                Click="btnMinEdit_Click"
+                Click="BtnMinEdit_Click"
                 Content="Изменить стоимость на ..."
                 Visibility="Collapsed" />
         </StackPanel>

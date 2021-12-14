@@ -10,7 +10,7 @@ namespace Lopushok.Views.Windows
     /// </summary>
     public partial class EditCostWindow : Window
     {
-        private List<Product> products;
+        private readonly List<Product> products;
 
         /// <summary>
         /// Конструктор окна
@@ -34,7 +34,7 @@ namespace Lopushok.Views.Windows
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSaveEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnSaveEdit_Click(object sender, RoutedEventArgs e)
         {
             if (decimal.TryParse(tbCost.Text, out decimal cost))
             {

@@ -32,14 +32,14 @@
             Grid.Column="2"
             HorizontalAlignment="Right"
             Background="#00CC76"
-            Click="btnBack_Click"
+            Click="BtnBack_Click"
             Content="Назад"
             Visibility="Collapsed" />
         <Frame
             x:Name="mainFrame"
             Grid.Row="1"
             Grid.ColumnSpan="2"
-            ContentRendered="mainFrame_ContentRendered"
+            ContentRendered="MainFrame_ContentRendered"
             NavigationUIVisibility="Hidden"
             Source="../Pages/MainPage.xaml" />
     </Grid>
