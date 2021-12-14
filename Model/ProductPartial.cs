@@ -18,7 +18,7 @@ namespace Lopushok.Model
         /// </summary>
         public decimal Price
         {
-            get 
+            get
             {
                 decimal price = 0;
                 foreach (var item in ProductMaterials)

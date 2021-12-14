@@ -60,7 +60,7 @@ namespace Lopushok.Views.Windows
                     Orientation = Orientation.Horizontal,
                     Margin = new Thickness(0, 5, 0, 5)
                 };
-                for (int j = imagesInRow * i; j < imagesInRow * i + imagesInRow; j++)
+                for (int j = imagesInRow * i; j < (imagesInRow * i) + imagesInRow; j++)
                 {
                     if (j == files.Length)
                     {

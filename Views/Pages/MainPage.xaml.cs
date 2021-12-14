@@ -274,11 +274,10 @@ namespace Lopushok.Views.Pages
         /// <param name="e"></param>
         private void DgProducts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (!(dgProducts.SelectedItem is Product))
+            if (dgProducts.SelectedItem is Product)
             {
-                return;
+                NavigationService.Navigate(new AddEditPage(dgProducts.SelectedItem as Product));
             }
-            NavigationService.Navigate(new AddEditPage(dgProducts.SelectedItem as Product));
         }
 
         /// <summary>
