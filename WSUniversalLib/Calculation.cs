@@ -8,14 +8,17 @@ namespace WSUniversalLib
 
         private static readonly float[] defects = new float[] { 0.3f, 0.12f };
 
+        /// <summary>
+        /// Метод расчитывает целое количество сырья, необходимого для производства определенного количества продукции, учитывая возможный брак материалов.
+        /// </summary>
+        /// <param name="productType">Тип продукции</param>
+        /// <param name="materialType">Тип материала</param>
+        /// <param name="count">Количество продукции</param>
+        /// <param name="width">Ширина продукта</param>
+        /// <param name="length">Длина продукта</param>
+        /// <returns>Количество сырья</returns>
         public static int GetQuantityForProduct(int productType, int materialType, int count, float width, float length)
         {
-            // 1, 1, 2, 15.564, 20
-            // 1, 1, 2, 15, 20.56568
-            // 2, 1, 2, 15.564, 20
-            // 1, 2, 2, 15, 20.56568
-            // 1, 1, 2, 15.564, 20.56568
-
             // Количество необходимого качественного сырья на одну единицу продукции рассчитывается как площадь
             // продукции, умноженная на коэффициент типа продукции.
             if (productType > coefficients.Length || materialType > defects.Length
@@ -28,7 +31,6 @@ namespace WSUniversalLib
             float materialAmount = square * coefficients[productType - 1] / (1 - defects[materialType - 1] / 100);
             int materialCount = (int)Math.Ceiling(materialAmount * count);
             return materialCount;
-            // count * width * length * 1.1 / 0.997
         }
     }
 }
