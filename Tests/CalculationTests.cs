@@ -7,7 +7,7 @@ namespace Tests
     public class CalculationTests
     {
         /// <summary>
-        /// Проверка с верными целочисленными данными
+        /// РџСЂРѕРІРµСЂРєР° СЃ РІРµСЂРЅС‹РјРё С†РµР»РѕС‡РёСЃР»РµРЅРЅС‹РјРё РґР°РЅРЅС‹РјРё
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_CorrectData()
@@ -16,7 +16,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с несуществующим типом продукта
+        /// РџСЂРѕРІРµСЂРєР° СЃ РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРј С‚РёРїРѕРј РїСЂРѕРґСѓРєС‚Р°
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_NonExistentProductType()
@@ -25,7 +25,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с несуществующим типом материала
+        /// РџСЂРѕРІРµСЂРєР° СЃ РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРј С‚РёРїРѕРј РјР°С‚РµСЂРёР°Р»Р°
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_NonExistentMaterialType()
@@ -34,7 +34,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с отрицательным количеством
+        /// РџСЂРѕРІРµСЂРєР° СЃ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј РєРѕР»РёС‡РµСЃС‚РІРѕРј
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_NegativeCount()
@@ -43,7 +43,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с нулевым количеством
+        /// РџСЂРѕРІРµСЂРєР° СЃ РЅСѓР»РµРІС‹Рј РєРѕР»РёС‡РµСЃС‚РІРѕРј
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_ZeroCount()
@@ -52,7 +52,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с отрицательной шириной
+        /// РџСЂРѕРІРµСЂРєР° СЃ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ С€РёСЂРёРЅРѕР№
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_NegativeWidth()
@@ -61,7 +61,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с нулевой шириной
+        /// РџСЂРѕРІРµСЂРєР° СЃ РЅСѓР»РµРІРѕР№ С€РёСЂРёРЅРѕР№
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_ZeroWidth()
@@ -70,7 +70,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с отрицательной длиной
+        /// РџСЂРѕРІРµСЂРєР° СЃ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕР№ РґР»РёРЅРѕР№
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_NegativeLength()
@@ -79,7 +79,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с нулевой длиной
+        /// РџСЂРѕРІРµСЂРєР° СЃ РЅСѓР»РµРІРѕР№ РґР»РёРЅРѕР№
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_ZeroLength()
@@ -88,7 +88,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с отрицательным типом продукта
+        /// РџСЂРѕРІРµСЂРєР° СЃ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј С‚РёРїРѕРј РїСЂРѕРґСѓРєС‚Р°
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_NegativeProductType()
@@ -97,7 +97,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с отрицательным типом материала
+        /// РџСЂРѕРІРµСЂРєР° СЃ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј С‚РёРїРѕРј РјР°С‚РµСЂРёР°Р»Р°
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_NegativeMaterialType()
@@ -106,7 +106,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с шириной - числом с плавающей точкой
+        /// РџСЂРѕРІРµСЂРєР° СЃ С€РёСЂРёРЅРѕР№ - С‡РёСЃР»РѕРј СЃ РїР»Р°РІР°СЋС‰РµР№ С‚РѕС‡РєРѕР№
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_FloatWidth()
@@ -115,7 +115,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с длиной - числом с плавающей точкой
+        /// РџСЂРѕРІРµСЂРєР° СЃ РґР»РёРЅРѕР№ - С‡РёСЃР»РѕРј СЃ РїР»Р°РІР°СЋС‰РµР№ С‚РѕС‡РєРѕР№
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_FloatLength()
@@ -124,7 +124,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с шириной - числом с плавающей точкой и типом продукта 2
+        /// РџСЂРѕРІРµСЂРєР° СЃ С€РёСЂРёРЅРѕР№ - С‡РёСЃР»РѕРј СЃ РїР»Р°РІР°СЋС‰РµР№ С‚РѕС‡РєРѕР№ Рё С‚РёРїРѕРј РїСЂРѕРґСѓРєС‚Р° 2
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_FloatWidthProductType2()
@@ -133,7 +133,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с шириной - числом с плавающей точкой и типом материала 2
+        /// РџСЂРѕРІРµСЂРєР° СЃ С€РёСЂРёРЅРѕР№ - С‡РёСЃР»РѕРј СЃ РїР»Р°РІР°СЋС‰РµР№ С‚РѕС‡РєРѕР№ Рё С‚РёРїРѕРј РјР°С‚РµСЂРёР°Р»Р° 2
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_FloatLengthProductType2()
@@ -142,7 +142,7 @@ namespace Tests
         }
 
         /// <summary>
-        /// Проверка с шириной и длиной - числами с плавающей точкой
+        /// РџСЂРѕРІРµСЂРєР° СЃ С€РёСЂРёРЅРѕР№ Рё РґР»РёРЅРѕР№ - С‡РёСЃР»Р°РјРё СЃ РїР»Р°РІР°СЋС‰РµР№ С‚РѕС‡РєРѕР№
         /// </summary>
         [TestMethod]
         public void GetQuantityForProduct_FloatLengthFloatWidth()
